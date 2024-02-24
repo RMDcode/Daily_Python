@@ -1,0 +1,31 @@
+import time
+import multiprocessing
+
+def fun(no):
+    sum=0
+
+    for i in range(100000):
+        sum=sum+(no*no)
+    return sum
+
+def main():
+    print("Demonstration of serial execution using single core")
+    
+    starttime=time.time()
+    p=multiprocessing.Pool()
+
+    Result=[]
+    Result=p.map(fun,range(1000))
+    p.close()
+    p.join()
+
+    for no in range(100000):
+        Result.append(fun(no))
+
+
+    endtime=time.time()
+
+    print("Time required to execute the application is :",endtime-starttime)
+
+if __name__=="__main__":
+    main()

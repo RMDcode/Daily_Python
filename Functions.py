@@ -1,0 +1,15 @@
+
+def Addition(No1,No2):
+    Result = 0
+    Result = No1+No2
+    return Result
+
+
+value1=int(input("Enter First Number : "))
+
+value2=int(input("Enter Second number : "))
+
+Answer = 0
+Answer = Addition(value1,value2)
+
+print("Addition is : ",Answer)
